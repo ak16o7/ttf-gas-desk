@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>TTF Gas Desk</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1c1 3 4 4.5 4 8a4 4 0 0 1-8 0c0-2 1-3 1.5-4 .3 1.2 1 1.8 1.6 2C7 5 7.2 3 8 1z' fill='%233987e5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/static/style.css?v=1.1.0" />
+  <script src="/static/plotly.min.js"></script>
+</head>
+<body data-refresh="300">
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><h1>TTF Gas Desk</h1><span>ICE verzögert · GIE · ENTSOG · Open-Meteo · EIA · Zeiten Europe/Berlin</span></div>
+    <div class="status" aria-live="polite"><span class="dot" id="statusDot"></span><span id="statusText">lädt…</span></div>
+    <span class="chip warn hidden" id="authChip" title="DASHBOARD_USERNAME/PASSWORD in Render setzen"><span class="ico">!</span>Öffentlich ohne Login</span>
+    <div class="controls">
+      <div class="seg" id="unit" role="group" aria-label="Einheit">
+        <button aria-pressed="true" data-v="eur">EUR/MWh</button><button aria-pressed="false" data-v="usd">USD/MMBtu</button>
+      </div>
+      <div class="seg" id="normal" role="group" aria-label="Temperatur-Normal">
+        <button aria-pressed="true" data-v="n10" title="Mittel 2016–2025">Normal 16–25</button><button aria-pressed="false" data-v="n30" title="WMO-Normal 1991–2020">91–20</button>
+      </div>
+      <label class="toggle"><input type="checkbox" id="auto" checked /> Auto</label>
+      <button class="btn primary" id="refresh">Aktualisieren</button>
+    </div>
+  </div>
+  <nav class="wrap subnav" aria-label="Abschnitte">
+    <a href="#pCurve">Kurve</a><a href="#pSpreads">Spreads</a><a href="#pSwitch">Fuel Switch</a><a href="#pArb">LNG-Arb</a>
+    <a href="#pStorage">Speicher</a><a href="#pGermany">Deutschland</a><a href="#pNorway">Pipelines</a><a href="#pSendout">LNG-Send-out</a><a href="#pWeather">Wetter</a><a href="#pGlobal">Global</a>
+    <a id="powerLink" href="https://de-power-desk.onrender.com/" rel="noreferrer" class="ext">DE Power Desk ↗</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="signals" aria-label="Signale">
+    <article class="sig" id="sigFront"><div class="sig-head"><span class="sig-label">TTF Front-Monat</span><span class="tag hidden" data-tag></span></div><div class="sig-value" data-value>—</div><div class="sig-sub" data-sub></div><div class="sig-foot" data-foot></div></article>
+    <article class="sig" id="sigSeason"><div class="sig-head"><span class="sig-label">Winter − Sommer</span><span class="tag hidden" data-tag></span></div><div class="sig-value" data-value>—</div><div class="sig-sub" data-sub></div><div class="sig-foot" data-foot></div></article>
+    <article class="sig" id="sigStorage"><div class="sig-head"><span class="sig-label">EU-Speicher</span><span class="tag hidden" data-tag></span></div><div class="sig-value" data-value>—</div><div class="sig-sub" data-sub></div><div class="sig-foot" data-foot></div></article>
+    <article class="sig" id="sigWeather"><div class="sig-head"><span class="sig-label">Wetter NW-Europa T+0–14</span><span class="tag hidden" data-tag></span></div><div class="sig-value" data-value>—</div><div class="sig-sub" data-sub></div><div class="sig-foot" data-foot></div></article>
+    <article class="sig" id="sigNorway"><div class="sig-head"><span class="sig-label">Norwegen-Flüsse</span><span class="tag hidden" data-tag></span></div><div class="sig-value" data-value>—</div><div class="sig-sub" data-sub></div><div class="sig-foot" data-foot></div></article>
+    <article class="sig" id="sigJkm"><div class="sig-head"><span class="sig-label">JKM − TTF</span><span class="tag hidden" data-tag></span></div><div class="sig-value" data-value>—</div><div class="sig-sub" data-sub></div><div class="sig-foot" data-foot></div></article>
+  </section>
+
+  <section class="grid">
+    <!-- Forward curve -->
+    <article class="panel wide" id="pCurve">
+      <div class="panel-head">
+        <div><h2>Forward-Kurve</h2><p>Monatskontrakte: aktueller Mark gegen Stand vor 1 Woche und 1 Monat (Settlements). Mark = letzter Trade heute, sonst Settlement D-1. Balken: Veränderung zum Vortags-Settlement.</p></div>
+        <div class="panel-tools"><div class="seg" id="hub" role="group" aria-label="Hub">
+          <button aria-pressed="true" data-v="TTF">TTF</button><button aria-pressed="false" data-v="THE">THE</button><button aria-pressed="false" data-v="NBP">NBP</button><button aria-pressed="false" data-v="JKM">JKM</button><button aria-pressed="false" data-v="HH">HH</button>
+        </div></div>
+      </div>
+      <div class="chart tall" id="chCurve"></div>
+      <div class="metrics" id="mCurve"></div>
+      <div class="filters">
+        <div class="seg" id="stripKind" role="group" aria-label="Kontraktart">
+          <button aria-pressed="true" data-v="month">Monate</button><button aria-pressed="false" data-v="quarter">Quartale</button><button aria-pressed="false" data-v="season">Saisons</button><button aria-pressed="false" data-v="cal">Jahre</button>
+        </div>
+        <span class="count" id="curveNote"></span>
+      </div>
+      <div class="tablewrap scroll"><table id="tCurve"></table></div>
+      <div class="sources" id="srcMarket"></div>
+    </article>
+
+    <!-- Spread board -->
+    <article class="panel wide" id="pSpreads">
+      <div class="panel-head">
+        <div><h2>Spread-Board</h2><p>Zeit-, Lokations- und Interkontinental-Spreads mit 1-Jahres-Einordnung aus Settlements. Zeile anklicken für die Historie. Hat ein Bein heute nicht gehandelt, wird der ganze Spread auf Settlement-Basis bewertet (kein Mix aus Live und Vortag).</p></div>
+      </div>
+      <div class="tablewrap"><table id="tSpreads"></table></div>
+      <h3 class="subhead" id="spreadTitle">—</h3>
+      <div class="chart" id="chSpread"></div>
+    </article>
+
+    <!-- Fuel switch -->
+    <article class="panel wide" id="pSwitch">
+      <div class="panel-head">
+        <div><h2>Fuel Switch &amp; Clean Spreads</h2><p>Grenzkosten (SRMC) je MWh Strom inkl. CO₂ gegen deutschen Base-Strom (ICE Endex). Clean Spark/Dark = Strom − SRMC. Switch-TTF = TTF, bei dem Gas- und Kohle-SRMC gleich sind. Gas auf Brennwertbasis (TTF, η und CO₂-Faktor 0,184 t/MWh<sub>Hs</sub>), Kohle auf NAR-Basis (API2 6.000 kcal/kg, 0,341 t/MWh). EUA = Dez-Kontrakt des Lieferjahres.</p></div>
+      </div>
+      <div class="inputs" id="swInputs">
+        <label title="Brennwertbasis Hs/HHV; 0,50 Hs ≈ 55 % Hi">η Gas (Hs) <input type="number" step="0.01" min="0.3" max="0.6" id="etaGas" /></label>
+        <label title="NAR-/Heizwertbasis">η Kohle <input type="number" step="0.01" min="0.25" max="0.5" id="etaCoal" /></label>
+      </div>
+      <div class="split">
+        <div class="chart" id="chSwitch"></div>
+        <div class="tablewrap"><table id="tSwitch"></table></div>
+      </div>
+    </article>
+
+    <!-- LNG arb -->
+    <article class="panel wide" id="pArb">
+      <div class="panel-head">
+        <div><h2>LNG-Arbitrage (US Gulf)</h2><p>Netbacks am US-Golf je Liefermonat: NWE = TTF − Regas − Fracht, Asien = JKM − Fracht. Variable Marge = bester Netback − Feedgas (Faktor × HH); unter 0 ⇒ Cargo-Cancellation-Signal. Parameter sind Annahmen.</p></div>
+      </div>
+      <div class="inputs" id="arbInputs">
+        <label>HH-Faktor <input type="number" step="0.01" id="hhMult" /></label>
+        <label>Toll $ <input type="number" step="0.05" id="toll" /></label>
+        <label>Fracht NWE $ <input type="number" step="0.05" id="shipNwe" /></label>
+        <label>Fracht Asien $ <input type="number" step="0.05" id="shipAsia" /></label>
+        <label>Regas NWE $ <input type="number" step="0.05" id="regas" /></label>
+      </div>
+      <div class="split">
+        <div class="chart" id="chArb"></div>
+        <div class="tablewrap"><table id="tArb"></table></div>
+      </div>
+    </article>
+
+    <!-- Storage -->
+    <article class="panel wide" id="pStorage">
+      <div class="panel-head">
+        <div><h2>Speicher (GIE AGSI+)</h2><p>Füllstand je Kalendertag gegen Vorjahr und 5-Jahres-Spanne/-Mittel. EU-Ziel 90 % zwischen 1.10. und 1.12. (Flex bis −10 pp). Projektionen sind linear und ignorieren das Saisonende der Einspeisung.</p></div>
+        <div class="panel-tools"><div class="seg" id="stArea" role="group" aria-label="Gebiet"></div></div>
+      </div>
+      <div class="chart tall" id="chStorage"></div>
+      <div class="metrics" id="mStorage"></div>
+      <div class="tablewrap"><table id="tStorage"></table></div>
+      <div class="sources" id="srcStorage"></div>
+    </article>
+
+    <!-- Norway -->
+    <article class="panel wide" id="pGermany">
+      <div class="panel-head">
+        <div><h2>Deutschland: Spot &amp; Verbrauch (THE)</h2><p>THE-Gastagesindex = Referenzpreis für Ausgleichsenergie (mengengewichteter EEX-Spotpreis des Gastags), Band = positiver/negativer Ausgleichsenergiepreis. Verbrauch = THE-Allokationen: SLP (Haushalte/Gewerbe, für heute und morgen bereits als Prognose-Allokation) und RLM (Industrie inkl. Kraftwerke, ca. 1 Tag Verzug), gleitend 7 Tage gegen Vorjahr.</p></div>
+        <div class="panel-tools"><div class="seg" id="consKind" role="group" aria-label="Verbrauch">
+          <button aria-pressed="true" data-v="total">Gesamt</button><button aria-pressed="false" data-v="slp">SLP</button><button aria-pressed="false" data-v="rlm">RLM</button>
+        </div></div>
+      </div>
+      <div class="metrics six" id="mGermany"></div>
+      <div class="split even">
+        <div class="chart" id="chSpot"></div>
+        <div class="chart" id="chCons"></div>
+      </div>
+      <div class="sources" id="srcGermany"></div>
+    </article>
+
+    <article class="panel wide" id="pNorway">
+      <div class="panel-head">
+        <div><h2>Pipeline-Supply: Norwegen &amp; Importrouten</h2><p>Physische Flüsse (ENTSOG, Entry-Seite, GWh/d). Norwegen: alle Gassco-Anlandepunkte, mehrfach gemeldete Flüsse an Dornum/Emden einmal gezählt. Unvollständig veröffentlichte jüngste Gastage werden ausgeblendet. Dazu die neuesten Gassco-Ausfallmeldungen (REMIT-UMM).</p></div>
+      </div>
+      <div class="split">
+        <div>
+          <div class="chart" id="chNorway"></div>
+          <div class="metrics" id="mNorway"></div>
+        </div>
+        <div>
+          <div class="tablewrap"><table id="tNorway"></table></div>
+          <div class="tablewrap"><table id="tRoutes"></table></div>
+        </div>
+      </div>
+      <h3 class="subhead">Neueste Gassco-Meldungen <small id="ummNote"></small></h3>
+      <div class="tablewrap"><table id="tUmm"></table></div>
+      <div class="sources" id="srcNorway"></div>
+    </article>
+
+    <!-- LNG send-out -->
+    <article class="panel" id="pSendout">
+      <div class="panel-head">
+        <div><h2>LNG-Send-out (GIE ALSI)</h2><p>Regasifizierung EU, GWh/d, gleitender 7-Tage-Schnitt gegen Vorjahr (gleicher Wochentag).</p></div>
+      </div>
+      <div class="chart" id="chSendout"></div>
+      <div class="metrics" id="mSendout"></div>
+      <div class="tablewrap"><table id="tSendout"></table></div>
+      <div class="sources" id="srcSendout"></div>
+    </article>
+
+    <!-- Weather -->
+    <article class="panel wide" id="pWeather">
+      <div class="panel-head">
+        <div><h2>Wetter &amp; Heizgradtage</h2><p>Nachfragegewichtete Korb-Temperatur (Haushalte + GHD). ECMWF-ENS (15 T) und GEFS (35 T) als Mittel mit 10–90 %-Band, deterministisch ECMWF und GFS inkl. 14 Tage Rückblick. Balken: HDD-Abweichung vom Normal (HDD = 18 − T bei T ≤ 15 °C).</p></div>
+        <div class="panel-tools"><div class="seg" id="basket" role="group" aria-label="Region">
+          <button aria-pressed="true" data-v="eu">NW-Europa + IT</button><button aria-pressed="false" data-v="asia">Nordost-Asien (JKM)</button>
+        </div></div>
+      </div>
+      <div class="chart tall" id="chWeather"></div>
+      <div class="metrics" id="mWeather"></div>
+      <div class="tablewrap"><table id="tWeather"></table></div>
+      <details class="method"><summary>Methodik &amp; Gewichte</summary><div id="weatherMethod"></div></details>
+      <div class="sources" id="srcWeather"></div>
+    </article>
+
+    <!-- Wind -->
+    <article class="panel" id="pWind">
+      <div class="panel-head">
+        <div><h2>Wind Nord-DE/NL (Gas-for-Power)</h2><p>Tagesmittel Windgeschwindigkeit in 100 m an fünf Küsten-/Binnenpunkten. Schwacher Wind ⇒ mehr Gasverstromung.</p></div>
+      </div>
+      <div class="chart short" id="chWind"></div>
+      <div class="metrics three" id="mWind"></div>
+    </article>
+
+    <!-- US storage -->
+    <article class="panel" id="pUs">
+      <div class="panel-head">
+        <div><h2>US-Speicher (EIA, Lower 48)</h2><p>Wöchentlicher Arbeitsgasbestand in Bcf gegen Vorjahr und 5-Jahres-Spanne – Treiber für Henry Hub und damit US-LNG-Feedgas-Kosten.</p></div>
+      </div>
+      <div class="chart short" id="chUs"></div>
+      <div class="metrics" id="mUs"></div>
+    </article>
+
+    <!-- Global -->
+    <article class="panel wide" id="pGlobal">
+      <div class="panel-head">
+        <div><h2>Global &amp; Cross-Commodity</h2><p>Front-Monate aller Märkte. Historie: rollierender Front-Monat (Yahoo), TTF mit EZB-Tageskurs in USD/MMBtu umgerechnet.</p></div>
+      </div>
+      <div class="chart" id="chGlobal"></div>
+      <div class="tablewrap"><table id="tGlobal"></table></div>
+      <div class="sources" id="srcGlobal"></div>
+    </article>
+  </section>
+
+  <footer>
+    Quellen: <a href="https://www.ice.com/products/27996665/Dutch-TTF-Natural-Gas-Futures" rel="noreferrer">ICE (verzögerte Website-Kurse, keine lizenzierte Datenversorgung)</a>,
+    <a href="https://agsi.gie.eu/" rel="noreferrer">GIE AGSI+/ALSI</a>, <a href="https://transparency.entsog.eu/" rel="noreferrer">ENTSOG</a>,
+    <a href="https://open-meteo.com/" rel="noreferrer">Open-Meteo</a> (CC BY 4.0), Normale: <a href="https://meteostat.net/" rel="noreferrer">Meteostat</a> (CC BY-NC 4.0),
+    <a href="https://www.eia.gov/opendata/" rel="noreferrer">EIA</a>, <a href="https://data.ecb.europa.eu/" rel="noreferrer">EZB</a>, Yahoo Finance.
+    Fehlende Daten werden nie als 0 dargestellt. Nur für nicht-kommerzielle Analyse. Keine Handelsempfehlung.
+    <span id="version"></span>
+  </footer>
+</main>
+<script src="/static/app.js?v=1.1.0"></script>
+</body>
+</html>

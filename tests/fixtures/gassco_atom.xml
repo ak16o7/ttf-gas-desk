@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Published at umm.gassco.no</title>
+  <id>tag:umm.gassco.no/atom.xml</id>
+  <updated>2026-09-24T15:26:46Z</updated>
+  <entry>
+    <title>2026-322 PLANNED event at Kristin.</title>
+    <link rel="alternate" href="https://umm.gassco.no/details?id=2519b1a7-9445-45c8-9d7e-488150bc18f4" />
+    <id>urn:uuid:65EB7B7E-193C-4E49-9AD5-CA52C84CC76E</id>
+    <updated>2026-09-24T11:30:00Z</updated>
+    <summary type="xhtml"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <REMITUrgentMarketMessages xmlns="http://www.acer.europa.eu/REMIT/REMITUMMGasSchema_V2.xsd" xmlns:ns2="http://www.acer.europa.eu/REMIT/REMITUMMCommonSchema_V1.xsd">
+            <UMM>
+                <messageId>2026-322__________________002</messageId>
+                <event>
+                    <eventStatus>Active</eventStatus>
+                    <eventType>Other unavailability</eventType>
+                    <eventStart>2026-09-24T06:00:00.000+02:00</eventStart>
+                    <eventStop>2026-10-02T06:00:00.000+02:00</eventStop>
+                </event>
+                <unavailabilityType>Planned</unavailabilityType>
+                <publicationDateTime>2026-09-24T13:30:00.000+02:00</publicationDateTime>
+                <capacity>
+                    <unitMeasure>mcm/d</unitMeasure>
+                    <unavailableCapacity>6.2</unavailableCapacity>
+                    <availableCapacity>7.6</availableCapacity>
+                    <technicalCapacity>13.8</technicalCapacity>
+                </capacity>
+                <unavailabilityReason>Yearly maintenance</unavailabilityReason>
+                <balancingZone>21Y000000000024I</balancingZone>
+                <balancingZone>21Y0000000001278</balancingZone>
+                <balancingZone>21YGB-UKGASGRIDW</balancingZone>
+                <balancingZone>21YNL----TTF---1</balancingZone>
+                <balancingZone>37Y701125MH0000I</balancingZone>
+                <balancingZone>37Y701133MH0000P</balancingZone>
+                <affectedAsset>
+                    <ns2:name>Kristin</ns2:name>
+                </affectedAsset>
+                <marketParticipant>
+                    <ns2:name>Gassco AS</ns2:name>
+                    <ns2:eic>21X-NO-A-A0A0A-2</ns2:eic>
+                </marketParticipant>
+            </UMM>
+        </REMITUrgentMarketMessages>]]></summary>
+  </entry>
+  <entry>
+    <title>2027-21 PLANNED event at Kristin.</title>
+    <link rel="alternate" href="https://umm.gassco.no/details?id=4298690c-fc40-463f-821a-f6bda984f495" />
+    <id>urn:uuid:F7685C5D-DB46-41DE-A4E7-969D84B4556A</id>
+    <updated>2026-09-24T11:30:00Z</updated>
+    <summary type="xhtml"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <REMITUrgentMarketMessages xmlns="http://www.acer.europa.eu/REMIT/REMITUMMGasSchema_V2.xsd" xmlns:ns2="http://www.acer.europa.eu/REMIT/REMITUMMCommonSchema_V1.xsd">
+            <UMM>
+                <messageId>2027-21___________________004</messageId>
+                <event>
+                    <eventStatus>Active</eventStatus>
+                    <eventType>Other unavailability</eventType>
+                    <eventStart>2027-03-18T06:00:00.000+01:00</eventStart>
+                    <eventStop>2027-03-20T06:00:00.000+01:00</eventStop>
+                </event>
+                <unavailabilityType>Planned</unavailabilityType>
+                <publicationDateTime>2026-09-24T13:30:00.000+02:00</publicationDateTime>
+                <capacity>
+                    <unitMeasure>mcm/d</unitMeasure>
+                    <unavailableCapacity>12.2</unavailableCapacity>
+                    <availableCapacity>0.0</availableCapacity>
+                    <technicalCapacity>12.2</technicalCapacity>
+                </capacity>
+                <unavailabilityReason>Yearly maintenance</unavailabilityReason>
+                <balancingZone>21Y000000000024I</balancingZone>
+                <balancingZone>21Y0000000001278</balancingZone>
+                <balancingZone>21YGB-UKGASGRIDW</balancingZone>
+                <balancingZone>21YNL----TTF---1</balancingZone>
+                <balancingZone>37Y701125MH0000I</balancingZone>
+                <balancingZone>37Y701133MH0000P</balancingZone>
+                <affectedAsset>
+                    <ns2:name>Kristin</ns2:name>
+                </affectedAsset>
+                <marketParticipant>
+                    <ns2:name>Gassco AS</ns2:name>
+                    <ns2:eic>21X-NO-A-A0A0A-2</ns2:eic>
+                </marketParticipant>
+            </UMM>
+        </REMITUrgentMarketMessages>]]></summary>
+  </entry>
+  <entry>
+    <title>2026-222 PLANNED event at Åsgard.</title>
+    <link rel="alternate" href="https://umm.gassco.no/details?id=588d9426-676d-4412-a98e-965706d016a9" />
+    <id>urn:uuid:CC7EF80E-4560-43A3-ABD5-0BAF7DC33151</id>
+    <updated>2026-09-24T11:30:00Z</updated>
+    <summary type="xhtml"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <REMITUrgentMarketMessages xmlns="http://www.acer.europa.eu/REMIT/REMITUMMGasSchema_V2.xsd" xmlns:ns2="http://www.acer.europa.eu/REMIT/REMITUMMCommonSchema_V1.xsd">
+            <UMM>
+                <messageId>2026-222__________________003</messageId>
+                <event>
+                    <eventStatus>Active</eventStatus>
+                    <eventType>Other unavailability</eventType>
+                    <eventStart>2026-09-25T06:00:00.000+02:00</eventStart>
+                    <eventStop>2026-10-05T06:00:00.000+02:00</eventStop>
+                </event>
+                <unavailabilityType>Planned</unavailabilityType>
+                <publicationDateTime>2026-09-24T13:30:00.000+02:00</publicationDateTime>
+                <capacity>
+                    <unitMeasure>mcm/d</unitMeasure>
+                    <unavailableCapacity>5.2</unavailableCapacity>
+                    <availableCapacity>24.0</availableCapacity>
+                    <technicalCapacity>29.2</technicalCapacity>
+                </capacity>
+                <unavailabilityReason>Yearly maintenance</unavailabilityReason>
+                <balancingZone>21Y000000000024I</balancingZone>
+                <balancingZone>21Y0000000001278</balancingZone>
+                <balancingZone>21YGB-UKGASGRIDW</balancingZone>
+                <balancingZone>21YNL----TTF---1</balancingZone>
+                <balancingZone>37Y701125MH0000I</balancingZone>
+                <balancingZone>37Y701133MH0000P</balancingZone>
+                <affectedAsset>
+                    <ns2:name>AAsgard</ns2:name>
+                </affectedAsset>
+                <marketParticipant>
+                    <ns2:name>Gassco AS</ns2:name>
+                    <ns2:eic>21X-NO-A-A0A0A-2</ns2:eic>
+                </marketParticipant>
+            </UMM>
+        </REMITUrgentMarketMessages>]]></summary>
+  </entry>
+  <entry>
+    <title>2027-102 PLANNED event at Aasta Hansteen.</title>
+    <link rel="alternate" href="https://umm.gassco.no/details?id=7596d9ac-d287-4a64-8014-4fbfc21385a8" />
+    <id>urn:uuid:09D2F190-0587-4A58-A7A4-3FB3538187E9</id>
+    <updated>2026-09-24T11:30:00Z</updated>
+    <summary type="xhtml"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <REMITUrgentMarketMessages xmlns="http://www.acer.europa.eu/REMIT/REMITUMMGasSchema_V2.xsd" xmlns:ns2="http://www.acer.europa.eu/REMIT/REMITUMMCommonSchema_V1.xsd">
+            <UMM>
+                <messageId>2027-102__________________001</messageId>
+                <event>
+                    <eventStatus>Active</eventStatus>
+                    <eventType>Other unavailability</eventType>
+                    <eventStart>2027-06-01T06:00:00.000+02:00</eventStart>
+                    <eventStop>2027-06-07T06:00:00.000+02:00</eventStop>
+                </event>
+                <unavailabilityType>Planned</unavailabilityType>
+                <publicationDateTime>2026-09-24T13:30:00.000+02:00</publicationDateTime>
+                <capacity>
+                    <unitMeasure>mcm/d</unitMeasure>
+                    <unavailableCapacity>10.3</unavailableCapacity>
+                    <availableCapacity>10.3</availableCapacity>
+                    <technicalCapacity>20.6</technicalCapacity>
+                </capacity>
+                <unavailabilityReason>Yearly maintenance</unavailabilityReason>
+                <balancingZone>21Y000000000024I</balancingZone>
+                <balancingZone>21Y0000000001278</balancingZone>
+                <balancingZone>21YGB-UKGASGRIDW</balancingZone>
+                <balancingZone>21YNL----TTF---1</balancingZone>
+                <balancingZone>37Y701125MH0000I</balancingZone>
+                <balancingZone>37Y701133MH0000P</balancingZone>
+                <affectedAsset>
+                    <ns2:name>Aasta Hansteen</ns2:name>
+                </affectedAsset>
+                <marketParticipant>
+                    <ns2:name>Gassco AS</ns2:name>
+                    <ns2:eic>21X-NO-A-A0A0A-2</ns2:eic>
+                </marketParticipant>
+            </UMM>
+        </REMITUrgentMarketMessages>]]></summary>
+  </entry>
+  <entry>
+    <title>2026-327 PLANNED event at Skarv.</title>
+    <link rel="alternate" href="https://umm.gassco.no/details?id=79e734e9-5884-4062-9391-dd0ea24d689a" />
+    <id>urn:uuid:F95FECD8-322E-4A85-BBBA-838EEB0236A6</id>
+    <updated>2026-09-24T11:30:00Z</updated>
+    <summary type="xhtml"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <REMITUrgentMarketMessages xmlns="http://www.acer.europa.eu/REMIT/REMITUMMGasSchema_V2.xsd" xmlns:ns2="http://www.acer.europa.eu/REMIT/REMITUMMCommonSchema_V1.xsd">
+            <UMM>
+                <messageId>2026-327__________________001</messageId>
+                <event>
+                    <eventStatus>Active</eventStatus>
+                    <eventType>Other unavailability</eventType>
+                    <eventStart>2026-09-28T06:00:00.000+02:00</eventStart>
+                    <eventStop>2026-09-29T06:00:00.000+02:00</eventStop>
+                </event>
+                <unavailabilityType>Planned</unavailabilityType>
+                <publicationDateTime>2026-09-24T13:30:00.000+02:00</publicationDateTime>
+                <capacity>
+                    <unitMeasure>mcm/d</unitMeasure>
+                    <unavailableCapacity>6.9</unavailableCapacity>
+                    <availableCapacity>16.0</availableCapacity>
+                    <technicalCapacity>22.9</technicalCapacity>
+                </capacity>
+                <unavailabilityReason>Yearly maintenance</unavailabilityReason>
+                <balancingZone>21Y000000000024I</balancingZone>
+                <balancingZone>21Y0000000001278</balancingZone>
+                <balancingZone>21YGB-UKGASGRIDW</balancingZone>
+                <balancingZone>21YNL----TTF---1</balancingZone>
+                <balancingZone>37Y701125MH0000I</balancingZone>
+                <balancingZone>37Y701133MH0000P</balancingZone>
+                <affectedAsset>
+                    <ns2:name>Skarv</ns2:name>
+                </affectedAsset>
+                <marketParticipant>
+                    <ns2:name>Gassco AS</ns2:name>
+                    <ns2:eic>21X-NO-A-A0A0A-2</ns2:eic>
+                </marketParticipant>
+            </UMM>
+        </REMITUrgentMarketMessages>]]></summary>
+  </entry>
+  <entry>
+    <title>2027-103 PLANNED event at Dvalin.</title>
+    <link rel="alternate" href="https://umm.gassco.no/details?id=8a080bcb-56dc-4a2b-a1a1-23f57b7e31ff" />
+    <id>urn:uuid:3345AE4E-43D2-4F09-AB17-D3BCDE5132AD</id>
+    <updated>2026-09-24T11:30:00Z</updated>
+    <summary type="xhtml"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <REMITUrgentMarketMessages xmlns="http://www.acer.europa.eu/REMIT/REMITUMMGasSchema_V2.xsd" xmlns:ns2="http://www.acer.europa.eu/REMIT/REMITUMMCommonSchema_V1.xsd">
+            <UMM>
+                <messageId>2027-103__________________001</messageId>
+                <event>
+                    <eventStatus>Active</eventStatus>
+                    <eventType>Other unavailability</eventType>
+                    <eventStart>2027-06-01T06:00:00.000+02:00</eventStart>
+                    <eventStop>2027-06-07T06:00:00.000+02:00</eventStop>
+                </event>
+                <unavailabilityType>Planned</unavailabilityType>
+                <publicationDateTime>2026-09-24T13:30:00.000+02:00</publicationDateTime>
+                <capacity>
+                    <unitMeasure>mcm/d</unitMeasure>
+                    <unavailableCapacity>8.4</unavailableCapacity>
+                    <availableCapacity>0.0</availableCapacity>
+                    <technicalCapacity>8.4</technicalCapacity>
+                </capacity>
+                <unavailabilityReason>Yearly maintenance</unavailabilityReason>
+                <balancingZone>21Y000000000024I</balancingZone>
+                <balancingZone>21Y0000000001278</balancingZone>
+                <balancingZone>21YGB-UKGASGRIDW</balancingZone>
+                <balancingZone>21YNL----TTF---1</balancingZone>
+                <balancingZone>37Y701125MH0000I</balancingZone>
+                <balancingZone>37Y701133MH0000P</balancingZone>
+                <affectedAsset>
+                    <ns2:name>Dvalin</ns2:name>
+                </affectedAsset>
+                <marketParticipant>
+                    <ns2:name>Gassco AS</ns2:name>
+                    <ns2:eic>21X-NO-A-A0A0A-2</ns2:eic>
+                </marketParticipant>
+            </UMM>
+        </REMITUrgentMarketMessages>]]></summary>
+  </entry>
+  <entry>
+    <title>2026-207 PLANNED event at Åsgard.</title>
+    <link rel="alternate" href="https://umm.gassco.no/details?id=9f61a060-4917-4adf-a7c3-8e299d4e15e6" />
+    <id>urn:uuid:4D5CCB0A-D82E-4FAC-A220-3054F5DEB492</id>
+    <updated>2026-09-23T23:12:58Z</updated>
+    <summary type="xhtml"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <REMITUrgentMarketMessages xmlns="http://www.acer.europa.eu/REMIT/REMITUMMGasSchema_V2.xsd" xmlns:ns2="http://www.acer.europa.eu/REMIT/REMITUMMCommonSchema_V1.xsd">
+            <UMM>
+                <messageId>2026-207__________________004</messageId>
+                <event>
+                    <eventStatus>Dismissed</eventStatus>
+                    <eventType>Other unavailability</eventType>
+                    <eventStart>2026-09-24T06:00:00.000+02:00</eventStart>
+                    <eventStop>2026-09-25T06:00:00.000+02:00</eventStop>
+                </event>
+                <unavailabilityType>Planned</unavailabilityType>
+                <publicationDateTime>2026-09-24T01:12:58.340+02:00</publicationDateTime>
+                <capacity>
+                    <unitMeasure>mcm/d</unitMeasure>
+                    <unavailableCapacity>16.4</unavailableCapacity>
+                    <availableCapacity>12.8</availableCapacity>
+                    <technicalCapacity>29.2</technicalCapacity>
+                </capacity>
+                <unavailabilityReason>Yearly maintenance</unavailabilityReason>
+                <balancingZone>21Y000000000024I</balancingZone>
+                <balancingZone>21Y0000000001278</balancingZone>
+                <balancingZone>21YGB-UKGASGRIDW</balancingZone>
+                <balancingZone>21YNL----TTF---1</balancingZone>
+                <balancingZone>37Y701125MH0000I</balancingZone>
+                <balancingZone>37Y701133MH0000P</balancingZone>
+                <affectedAsset>
+                    <ns2:name>AAsgard</ns2:name>
+                </affectedAsset>
+                <marketParticipant>
+                    <ns2:name>Gassco AS</ns2:name>
+                    <ns2:eic>21X-NO-A-A0A0A-2</ns2:eic>
+                </marketParticipant>
+            </UMM>
+        </REMITUrgentMarketMessages>]]></summary>
+  </entry>
+  <entry>
+    <title>2026-207 PLANNED event at Åsgard.</title>
+    <link rel="alternate" href="https://umm.gassco.no/details?id=9f61a060-4917-4adf-a7c3-8e299d4e15e6" />
+    <id>urn:uuid:BF70C0FA-5176-46AF-8154-0C270A0F1E4B</id>
+    <updated>2026-09-24T10:16:21Z</updated>
+    <summary type="xhtml"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <REMITUrgentMarketMessages xmlns="http://www.acer.europa.eu/REMIT/REMITUMMGasSchema_V2.xsd" xmlns:ns2="http://www.acer.europa.eu/REMIT/REMITUMMCommonSchema_V1.xsd">
+            <UMM>
+                <messageId>2026-207__________________005</messageId>
+                <event>
+                    <eventStatus>Active</eventStatus>
+                    <eventType>Other unavailability</eventType>
+                    <eventStart>2026-09-24T06:00:00.000+02:00</eventStart>
+                    <eventStop>2026-09-25T06:00:00.000+02:00</eventStop>
+                </event>
+                <unavailabilityType>Planned</unavailabilityType>
+                <publicationDateTime>2026-09-24T12:16:21.337+02:00</publicationDateTime>
+                <capacity>
+                    <unitMeasure>mcm/d</unitMeasure>
+                    <unavailableCapacity>20.4</unavailableCapacity>
+                    <availableCapacity>8.8</availableCapacity>
+                    <technicalCapacity>29.2</technicalCapacity>
+                </capacity>
+                <unavailabilityReason>Yearly maintenance</unavailabilityReason>
+                <balancingZone>21Y000000000024I</balancingZone>
+                <balancingZone>21Y0000000001278</balancingZone>
+                <balancingZone>21YGB-UKGASGRIDW</balancingZone>
+                <balancingZone>21YNL----TTF---1</balancingZone>
+                <balancingZone>37Y701125MH0000I</balancingZone>
+                <balancingZone>37Y701133MH0000P</balancingZone>
+                <affectedAsset>
+                    <ns2:name>AAsgard</ns2:name>
+                </affectedAsset>
+                <marketParticipant>
+                    <ns2:name>Gassco AS</ns2:name>
+                    <ns2:eic>21X-NO-A-A0A0A-2</ns2:eic>
+                </marketParticipant>
+            </UMM>
+        </REMITUrgentMarketMessages>]]></summary>
+  </entry>
+  <entry>
+    <title>2026-328 PLANNED event at Gullfaks.</title>
+    <link rel="alternate" href="https://umm.gassco.no/details?id=b84ab4eb-baa3-4711-bebc-3f8411ab5abc" />
+    <id>urn:uuid:C746227A-A4C1-4C75-9E92-21B8CF100A5E</id>
+    <updated>2026-09-24T11:30:00Z</updated>
+    <summary type="xhtml"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <REMITUrgentMarketMessages xmlns="http://www.acer.europa.eu/REMIT/REMITUMMGasSchema_V2.xsd" xmlns:ns2="http://www.acer.europa.eu/REMIT/REMITUMMCommonSchema_V1.xsd">
+            <UMM>
+                <messageId>2026-328__________________001</messageId>
+                <event>
+                    <eventStatus>Active</eventStatus>
+                    <eventType>Other unavailability</eventType>
+                    <eventStart>2026-09-30T06:00:00.000+02:00</eventStart>
+                    <eventStop>2026-10-01T06:00:00.000+02:00</eventStop>
+                </event>
+                <unavailabilityType>Planned</unavailabilityType>
+                <publicationDateTime>2026-09-24T13:30:00.000+02:00</publicationDateTime>
+                <capacity>
+                    <unitMeasure>mcm/d</unitMeasure>
+                    <unavailableCapacity>-6.5</unavailableCapacity>
+                    <availableCapacity>19.4</availableCapacity>
+                    <technicalCapacity>12.9</technicalCapacity>
+                </capacity>
+                <unavailabilityReason>Yearly maintenance</unavailabilityReason>
+                <balancingZone>21Y000000000024I</balancingZone>
+                <balancingZone>21Y0000000001278</balancingZone>
+                <balancingZone>21YGB-UKGASGRIDW</balancingZone>
+                <balancingZone>21YNL----TTF---1</balancingZone>
+                <balancingZone>37Y701125MH0000I</balancingZone>
+                <balancingZone>37Y701133MH0000P</balancingZone>
+                <affectedAsset>
+                    <ns2:name>Gullfaks</ns2:name>
+                </affectedAsset>
+                <marketParticipant>
+                    <ns2:name>Gassco AS</ns2:name>
+                    <ns2:eic>21X-NO-A-A0A0A-2</ns2:eic>
+                </marketParticipant>
+            </UMM>
+        </REMITUrgentMarketMessages>]]></summary>
+  </entry>
+  <entry>
+    <title>2027-1 PLANNED event at Aasta Hansteen.</title>
+    <link rel="alternate" href="https://umm.gassco.no/details?id=d9b4cbb3-1a0d-4307-88ab-962533e9f150" />
+    <id>urn:uuid:2C3AFA0D-F9CE-41E9-825A-208C77F034FE</id>
+    <updated>2026-09-24T11:30:00Z</updated>
+    <summary type="xhtml"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <REMITUrgentMarketMessages xmlns="http://www.acer.europa.eu/REMIT/REMITUMMGasSchema_V2.xsd" xmlns:ns2="http://www.acer.europa.eu/REMIT/REMITUMMCommonSchema_V1.xsd">
+            <UMM>
+                <messageId>2027-1____________________005</messageId>
+                <event>
+                    <eventStatus>Active</eventStatus>
+                    <eventType>Other unavailability</eventType>
+                    <eventStart>2027-05-04T06:00:00.000+02:00</eventStart>
+                    <eventStop>2027-05-31T06:00:00.000+02:00</eventStop>
+                </event>
+                <unavailabilityType>Planned</unavailabilityType>
+                <publicationDateTime>2026-09-24T13:30:00.000+02:00</publicationDateTime>
+                <capacity>
+                    <unitMeasure>mcm/d</unitMeasure>
+                    <unavailableCapacity>20.8</unavailableCapacity>
+                    <availableCapacity>0.0</availableCapacity>
+                    <technicalCapacity>20.8</technicalCapacity>
+                </capacity>
+                <unavailabilityReason>Yearly maintenance</unavailabilityReason>
+                <balancingZone>21Y000000000024I</balancingZone>
+                <balancingZone>21Y0000000001278</balancingZone>
+                <balancingZone>21YGB-UKGASGRIDW</balancingZone>
+                <balancingZone>21YNL----TTF---1</balancingZone>
+                <balancingZone>37Y701125MH0000I</balancingZone>
+                <balancingZone>37Y701133MH0000P</balancingZone>
+                <affectedAsset>
+                    <ns2:name>Aasta Hansteen</ns2:name>
+                </affectedAsset>
+                <marketParticipant>
+                    <ns2:name>Gassco AS</ns2:name>
+                    <ns2:eic>21X-NO-A-A0A0A-2</ns2:eic>
+                </marketParticipant>
+            </UMM>
+        </REMITUrgentMarketMessages>]]></summary>
+  </entry>
+</feed>

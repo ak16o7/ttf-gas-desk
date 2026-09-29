@@ -1,0 +1,24 @@
+# Render Blueprint: New > Blueprint > dieses Repo auswählen. Werte mit sync:false fragt Render beim Anlegen ab.
+services:
+  - type: web
+    name: ttf-gas-desk
+    runtime: python
+    plan: free
+    region: frankfurt
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --proxy-headers --forwarded-allow-ips="*"
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: EIA_API_KEY
+        sync: false
+      - key: GIE_API_KEY
+        sync: false
+      - key: DASHBOARD_USERNAME
+        sync: false
+      - key: DASHBOARD_PASSWORD
+        sync: false
+      - key: POWER_DESK_URL
+        value: https://de-power-desk.onrender.com/
