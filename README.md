@@ -73,4 +73,6 @@ New → Blueprint → select this repository. `render.yaml` defines the web serv
 - ICE quotes are delayed public website data, not a licensed feed.
 - The Gassco feed contains the latest ~10 messages only.
 - THE day index and SLP values for the current and next gas day are preliminary.
-- For non-commercial use. Not investment advice.
+- Not investment advice.
+
+Code: MIT. Data: ICE, GIE, ENTSOG, Trading Hub Europe, Gassco, Open-Meteo, Meteostat, EIA, ECB, Yahoo Finance; their terms of use apply. The ICE quotes are for non-commercial use only.
